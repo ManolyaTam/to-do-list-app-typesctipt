@@ -7,15 +7,28 @@ const useTodoList = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      fetchTodos().then(res => {
-        if (res && Array.isArray(res))
-          setTodos(res)
-      })
-    }
+      const res = await fetchTodos();
+      if (res && Array.isArray(res)) {
+        setTodos(res);
+      }
+    };
     fetch();
   }, []);
 
-  return { todos }
+  const getTaskById = (id: number): Todo | undefined => {
+    return todos.find(todo => todo.id === id)
+  }
+
+  const deleteTask = (id: number) => {
+    const task = getTaskById(id);
+    if (!task) return;
+
+    const confirmed = window.confirm(`Are you sure you want to delete this task?\n${task.todo}`);
+    if (confirmed)
+      setTodos(todos.filter(todo => todo.id !== id));
+  };
+
+  return { todos, deleteTask }
 }
 
 export default useTodoList;
