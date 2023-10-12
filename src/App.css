@@ -7,3 +7,22 @@
   zoom: 110%;
   margin-bottom: 100px;
 }
+
+.main-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-actions .delete-all-btn {
+  background-color: transparent;
+  border: none;
+  color: #d20909;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+.main-actions .delete-all-btn:hover,
+.main-actions .delete-all-btn:focus {
+  text-decoration: underline;
+  outline: none;
+}

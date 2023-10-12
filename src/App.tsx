@@ -9,7 +9,10 @@ function App() {
   return (
     <div className="App">
       <h2>To Do List</h2>
-      <CreateTaskFrom onSubmit={createTask} />
+      <div className='main-actions'>
+        <CreateTaskFrom onSubmit={createTask} />
+        <button className='delete-all-btn'>delete all</button>
+      </div>
       <div>
         {
           todos.length ? todos.map((todo) => (

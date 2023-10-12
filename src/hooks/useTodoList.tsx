@@ -63,7 +63,11 @@ const useTodoList = () => {
     }));
   };
 
-  return { todos, deleteTask, createTask, toggleTask }
+  const deleteAllTasks = () => {
+    setTodos([]);
+  }
+
+  return { todos, deleteTask, createTask, toggleTask, deleteAllTasks }
 }
 
 export default useTodoList;
