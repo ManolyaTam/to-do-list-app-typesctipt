@@ -45,7 +45,16 @@ const useTodoList = () => {
       setTodos(todos.filter(todo => todo.id !== id));
   };
 
-  return { todos, deleteTask }
+  const createTask = (description: string) => {
+    const task: Todo = {
+      id: Math.random(),
+      todo: description,
+      completed: false
+    }
+    setTodos(todos => [...todos, task]);
+  }
+
+  return { todos, deleteTask, createTask }
 }
 
 export default useTodoList;

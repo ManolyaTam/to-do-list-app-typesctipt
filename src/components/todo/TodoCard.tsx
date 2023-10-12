@@ -1,4 +1,4 @@
-import './todo.css'
+import './todo-card.css'
 import { FC, useState } from 'react';
 
 interface TodoProps {
