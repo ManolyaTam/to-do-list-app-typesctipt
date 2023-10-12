@@ -11,8 +11,13 @@ const TodoCard: FC<TodoProps> = ({ id, todo, completed }) => {
   const [checked, setChecked] = useState(completed);
   return (
     <div className='todo'>
-      <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
-      <p className='desc'>{todo}</p>
+      <div className="right">
+        <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
+        <p className='desc'>{todo}</p>
+      </div>
+      <div className='left'>
+        <button className='x-btn'>x</button>
+      </div>
     </div>
   );
 };

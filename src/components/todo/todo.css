@@ -1,6 +1,7 @@
 .todo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid lightgrey;
   padding: 10px;
   width: 600px;
@@ -14,4 +15,24 @@
 
 .todo:has(input:checked) .desc {
   text-decoration: line-through;
+}
+
+
+.todo .right,
+.todo .left {
+  display: flex;
+  align-items: flex-start;
+}
+
+.todo .left .x-btn {
+  color: red;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+.todo .left .x-btn:hover {
+  background-color: rgb(255, 97, 97);
+  color: white;
 }
