@@ -1,3 +1,4 @@
+import './create-form.css'
 import { FC } from "react";
 
 interface CreateFormProps {
@@ -15,12 +16,16 @@ const CreateTaskFrom: FC<CreateFormProps> = ({ onSubmit }) => {
     target.description.value = ''; // reset the input field
   }
 
-
   return (
-    <div>
+    <div className='create-task-form'>
       <form onSubmit={onTaskSubmit}>
-        <input placeholder='Create a task...' name='description' required />
-        <button>add</button>
+        <input
+          className='desc-field'
+          placeholder='Create a task...'
+          name='description'
+          required
+        />
+        <button className='create-task-btn'>add</button>
       </form>
     </div>
   )

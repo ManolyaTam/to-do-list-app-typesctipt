@@ -1,7 +1,7 @@
 import './App.css';
 import TodoCard from './components/todoCard/TodoCard';
 import useTodoList from './hooks/useTodoList';
-import CreateTaskFrom from './components/createForm/CreateForm';
+import CreateTaskFrom from './components/createTaskForm/CreateTaskForm';
 
 function App() {
   const { todos, deleteTask, createTask } = useTodoList();
