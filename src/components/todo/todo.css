@@ -1,0 +1,17 @@
+.todo {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+  padding: 10px;
+  width: 600px;
+  box-sizing: border-box;
+}
+
+.todo p {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.todo:has(input:checked) .desc {
+  text-decoration: line-through;
+}

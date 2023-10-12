@@ -1,3 +1,4 @@
+import './todo.css'
 import { FC, useState } from 'react';
 
 interface TodoProps {
@@ -9,9 +10,9 @@ interface TodoProps {
 const TodoCard: FC<TodoProps> = ({ id, todo, completed }) => {
   const [checked, setChecked] = useState(completed);
   return (
-    <div>
+    <div className='todo'>
       <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
-      <p>{todo}</p>
+      <p className='desc'>{todo}</p>
     </div>
   );
 };
