@@ -4,10 +4,11 @@ import { FC, useState } from 'react';
 interface TodoProps {
   id: number;
   todo: string;
-  completed: boolean
+  completed: boolean,
+  onDelete: (e: React.MouseEvent<HTMLElement>) => void
 }
 
-const TodoCard: FC<TodoProps> = ({ id, todo, completed }) => {
+const TodoCard: FC<TodoProps> = ({ id, todo, completed, onDelete }) => {
   const [checked, setChecked] = useState(completed);
   return (
     <div className='todo'>
@@ -16,7 +17,12 @@ const TodoCard: FC<TodoProps> = ({ id, todo, completed }) => {
         <p className='desc'>{todo}</p>
       </div>
       <div className='left'>
-        <button className='x-btn'>x</button>
+        <button
+          className='x-btn'
+          onClick={onDelete}
+        >
+          x
+        </button>
       </div>
     </div>
   );

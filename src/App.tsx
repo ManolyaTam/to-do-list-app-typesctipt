@@ -1,22 +1,9 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-import { fetchTodos } from './services/CRUD';
-import { Todo } from './types/todo';
 import TodoCard from './components/todo/TodoCard';
+import useTodoList from './hooks/useTodoList';
 
 function App() {
-  const [todos, setTodos] = useState<Todo[]>([]);
-
-  useEffect(() => {
-    const fetch = async () => {
-      fetchTodos().then(res => {
-        if (res && Array.isArray(res))
-          setTodos(res)
-      })
-    }
-    fetch();
-  }, []);
-
+  const { todos } = useTodoList();
   return (
     <div className="App">
       <h2>To Do List</h2>
@@ -27,6 +14,7 @@ function App() {
             id={todo.id}
             todo={todo.todo}
             completed={todo.completed}
+            onDelete={e => console.log(todo.id)}
           />
         ))}
       </div>
