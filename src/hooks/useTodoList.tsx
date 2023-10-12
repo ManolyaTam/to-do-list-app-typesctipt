@@ -64,7 +64,9 @@ const useTodoList = () => {
   };
 
   const deleteAllTasks = () => {
-    setTodos([]);
+    const confirmed = window.confirm('Are you sure you want to delete ALL TASKS?');
+    if (confirmed)
+      setTodos([]);
   }
 
   return { todos, deleteTask, createTask, toggleTask, deleteAllTasks }

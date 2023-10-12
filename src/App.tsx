@@ -4,14 +4,19 @@ import useTodoList from './hooks/useTodoList';
 import CreateTaskFrom from './components/createTaskForm/CreateTaskForm';
 
 function App() {
-  const { todos, deleteTask, createTask, toggleTask } = useTodoList();
+  const { todos, deleteTask, createTask, toggleTask, deleteAllTasks } = useTodoList();
 
   return (
     <div className="App">
       <h2>To Do List</h2>
       <div className='main-actions'>
         <CreateTaskFrom onSubmit={createTask} />
-        <button className='delete-all-btn'>delete all</button>
+        <button
+          className='delete-all-btn'
+          onClick={deleteAllTasks}
+        >
+          delete all
+        </button>
       </div>
       <div>
         {
