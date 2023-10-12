@@ -54,7 +54,16 @@ const useTodoList = () => {
     setTodos(todos => [...todos, task]);
   }
 
-  return { todos, deleteTask, createTask }
+  const toggleTask = (id: number) => {
+    setTodos(todos => todos.map(todo => {
+      if (todo.id === id) {
+        return { ...todo, completed: !todo.completed };
+      }
+      return todo;
+    }));
+  };
+
+  return { todos, deleteTask, createTask, toggleTask }
 }
 
 export default useTodoList;

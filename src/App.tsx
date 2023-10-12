@@ -4,7 +4,7 @@ import useTodoList from './hooks/useTodoList';
 import CreateTaskFrom from './components/createTaskForm/CreateTaskForm';
 
 function App() {
-  const { todos, deleteTask, createTask } = useTodoList();
+  const { todos, deleteTask, createTask, toggleTask } = useTodoList();
 
   return (
     <div className="App">
@@ -19,6 +19,7 @@ function App() {
               todo={todo.todo}
               completed={todo.completed}
               onDelete={() => deleteTask(todo.id)}
+              onToggle={() => toggleTask(todo.id)}
             />
           ))
             : 'todo list is empty'}
